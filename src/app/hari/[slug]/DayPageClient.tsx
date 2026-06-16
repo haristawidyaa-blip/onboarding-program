@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, AlertTriangle } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Header } from "@/components/Header";
 import { TaskCard } from "@/components/TaskCard";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -31,13 +32,12 @@ export function DayPageClient({
       <Header />
       <main className="flex-1">
         <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
-          <Link
-            href="/program/onboarding"
-            className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:underline"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} />
-            Kembali ke Dashboard
-          </Link>
+          <Breadcrumbs
+            items={[
+              { label: "Onboarding", href: "/program/onboarding" },
+              { label: `Hari ${day.dayNumber}: ${day.title}` },
+            ]}
+          />
 
           <div className="mt-4 rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm">
             <div className="flex items-center gap-2">

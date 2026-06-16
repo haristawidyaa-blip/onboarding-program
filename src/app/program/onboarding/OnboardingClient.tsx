@@ -1,8 +1,6 @@
 "use client";
 
 import {
-  Home as HomeIcon,
-  ChevronRight,
   ArrowRight,
   ArrowUpRight,
   HelpCircle,
@@ -16,6 +14,7 @@ import {
   ListChecks,
   TrendingUp,
 } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScHcMMSNKyjLa-M7hUNDXkae3oLoI4mB09OdzMSI3VmxCNLwg/viewform?usp=send_form";
@@ -59,11 +58,7 @@ export function OnboardingClient() {
         >
           <div className="absolute inset-0 bg-[#0f0f0f]/80" aria-hidden />
           <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-14">
-            <div className="flex items-center gap-2 text-sm text-white/60">
-              <HomeIcon className="h-4 w-4" strokeWidth={2} />
-              <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} />
-              <span className="font-semibold text-white">Program Orientasi Karyawan Baru CISDI</span>
-            </div>
+            <Breadcrumbs items={[{ label: "Onboarding" }]} variant="on-dark" />
 
             <h1 className="mt-6 max-w-3xl text-3xl sm:text-5xl font-semibold tracking-tight text-white leading-tight">
               Hai, selamat bergabung di CISDI!
