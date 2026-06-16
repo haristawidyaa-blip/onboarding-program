@@ -514,47 +514,21 @@ export const programDays: ProgramDay[] = [
   {
     slug: "hari-5",
     dayNumber: 5,
-    title: "Refleksi Akhir & Sesi Penyelarasan Penutup",
+    title: "Sesi Penyelarasan Penutup",
     icon: "kickoff",
     intro:
-      "Hari terakhir program orientasi! Saatnya merangkum perjalanan belajarmu selama satu pekan, menuntaskan misi hari keempat, dan menyiapkan langkah-langkah awal kontribusimu di CISDI.",
-    note:
-      "Materi rinci hari kelima belum tersedia dalam dokumen sumber — bagian ini menjadi placeholder yang dapat dilengkapi oleh Tim Learning & Development.",
+      "Selamat! Kamu telah menyelesaikan kegiatan belajar pertama dari perjalananmu di CISDI. Kamu telah mengenal bagaimana dan mengapa CISDI lahir, memahami visi dan misi yang menjadi arah langkah, serta menggali nilai-nilai yang kita pegang teguh dalam bekerja dan berinteraksi. Semoga proses ini membantu melihat bahwa kamu bukan hanya Civitas sebuah organisasi, melainkan juga bagian dari sebuah gerakan—untuk mewujudkan Indonesia yang lebih sehat, lebih adil, dan lebih setara. Perjalanan ini tidak selalu mudah. Tapi bersama, kita bisa saling menopang. Dan setiap langkah kecil yang kamu ambil—setiap inisiatif, ide, atau keputusan yang kamu buat—dapat membawa perubahan yang berarti. Mari terus belajar, tumbuh, dan bekerja bersama dengan semangat kolaborasi, integritas, keberlanjutan, keberagaman, dan keberpihakan sosial. Sampai jumpa di bagian pembelajaran berikutnya. Selamat datang di CISDI. ✨",
     sections: [
       {
-        id: "wrap-up",
-        title: "Menuntaskan Misi & Persiapan Sesi Akhir",
-        tasks: [
-          {
-            id: "d5-finalize-mission",
-            type: "action",
-            title: "Tuntaskan misi Hari Keempat (jika belum selesai)",
-            description: "Pastikan kamu sudah bertemu Supervisor dan berkenalan dengan 3 civitas CISDI lintas departemen.",
-          },
-          {
-            id: "d5-review",
-            type: "reflection",
-            title: "Tinjau kembali seluruh refleksi Hari 1–4",
-            description: "Rangkum poin-poin penting yang ingin kamu bawa ke sesi penyelarasan akhir.",
-          },
-        ],
-      },
-      {
-        id: "sesi-akhir",
-        title: "Sesi Penyelarasan Penutup",
+        id: "hari-kelima",
+        title: "Hari Kelima",
         tasks: [
           {
             id: "d5-sesi",
             type: "meeting",
-            title: "Ikuti Sesi Penyelarasan Terakhir",
+            title: "Sesi Penyelarasan",
             description:
-              "Diskusikan hasil misi Hari Keempat dan seluruh pembelajaran selama program orientasi bersama Supervisor dan Tim Human Capital / Learning & Development.",
-          },
-          {
-            id: "d5-feedback",
-            type: "reflection",
-            title: "Berikan feedback program orientasi",
-            description: "Bagikan masukanmu kepada Tim Human Capital untuk perbaikan program orientasi selanjutnya.",
+              "Sesi penyelarasan dilaksanakan sesuai dengan jadwal yang telah tercantum pada kalender Google, pastikan telah mengakses seluruh materi asinkronus dan menyelesaikan seluruh tugas pada laman program orientasi karyawan CISDI.",
           },
         ],
       },
