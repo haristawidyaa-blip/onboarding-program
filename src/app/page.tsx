@@ -116,7 +116,8 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
-          <div className="max-w-3xl">
+          <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-12 lg:items-start">
+          <div>
           <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
             Sebelum Mulai
           </p>
@@ -237,6 +238,66 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </div>
+
+          <aside className="mt-10 lg:mt-0 lg:sticky lg:top-24 lg:self-start">
+            <div className="rounded-3xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-6 shadow-sm">
+              <p className="text-sm font-semibold text-zinc-900 dark:text-white">Progress Onboardingmu</p>
+
+              <div className="relative mx-auto mt-5 flex h-36 w-36 items-center justify-center">
+                <svg viewBox="0 0 120 120" className="h-36 w-36 -rotate-90">
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="52"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="10"
+                    className="text-zinc-100 dark:text-white/10"
+                  />
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="52"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="10"
+                    strokeLinecap="round"
+                    className="text-red-600 dark:text-red-500 transition-all duration-700"
+                    strokeDasharray={2 * Math.PI * 52}
+                    strokeDashoffset={2 * Math.PI * 52 * (1 - pct / 100)}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="text-3xl font-semibold text-red-600 dark:text-red-400">{pct}%</span>
+                  <span className="text-xs text-zinc-500 dark:text-white/50">selesai</span>
+                </div>
+              </div>
+
+              <div className="mt-5 space-y-2.5 text-sm">
+                <div className="flex items-center justify-between text-zinc-600 dark:text-white/60">
+                  <span>Task selesai</span>
+                  <span className="font-medium text-zinc-900 dark:text-white">
+                    {totalDone}/{totalTaskCount}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-zinc-600 dark:text-white/60">
+                  <span>Hari aktif</span>
+                  <span className="font-medium text-zinc-900 dark:text-white">
+                    {nextDay.dayNumber}/{programDays.length}
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href={`/hari/${nextDay.slug}`}
+                className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-red-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500"
+              >
+                Lanjutkan Belajar
+                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              </a>
+            </div>
+          </aside>
           </div>
         </section>
 
