@@ -31,7 +31,7 @@ export function LoginClient() {
   }
 
   return (
-    <main className="flex min-h-screen bg-[#0a0a0a]">
+    <main className="flex h-screen bg-[#0a0a0a]">
       {/* ── Left panel ── */}
       <div className="relative hidden lg:flex lg:w-[52%] flex-col items-start justify-center px-14 py-16 overflow-hidden bg-[#0f0f0f]">
         {/* glow blobs */}
