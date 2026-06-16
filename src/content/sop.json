@@ -1,0 +1,346 @@
+[
+  {
+    "id": "panduan-pengelolaan-website-cisdi-cisdi-org",
+    "name": "Panduan Pengelolaan Website CISDI (cisdi.org)",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-komunikasi-internal-cisdi",
+    "name": "Pedoman Komunikasi Internal CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengajuan-nota-keuangan",
+    "name": "Panduan Pengajuan Nota Keuangan",
+    "type": "SOP",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "mekanisme-time-tracking-di-google-calendar",
+    "name": "Mekanisme Time Tracking di Google Calendar",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-penamaan-dan-penyimpanan-dokumen",
+    "name": "Pedoman Penamaan dan Penyimpanan Dokumen",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengajuan-lembur",
+    "name": "Panduan Pengajuan Lembur",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengajuan-cuti-dan-pengganti-hari",
+    "name": "Panduan Pengajuan Cuti dan Pengganti Hari",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengadaan-barang-dan-jasa",
+    "name": "Panduan Pengadaan Barang dan Jasa",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-bermedia-sosial-bagi-karyawan-cisdi",
+    "name": "Pedoman Bermedia Sosial Bagi Karyawan CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Digital Communication",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "kebijakan-anti-kekerasan-dan-pelecehan-di-ruang-kerja",
+    "name": "Kebijakan Anti Kekerasan dan Pelecehan di Ruang Kerja",
+    "type": "SOP",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "permintaan-tanda-tangan-ceo",
+    "name": "Permintaan Tanda Tangan CEO",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-unggah-konten-ke-website-cisdi",
+    "name": "Panduan Unggah Konten ke Website CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penggunaan-jmo-jamsostek-mobile-bpjs-ketenagakerjaan",
+    "name": "Panduan Penggunaan JMO (Jamsostek Mobile) - BPJS Ketenagakerjaan",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penggunaan-mobile-jkn-jaminan-kesehatan-nasional-bpj",
+    "name": "Panduan Penggunaan Mobile JKN (Jaminan Kesehatan Nasional) - BPJS Kesehatan",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "sop-pengelolaan-aset-cisdi",
+    "name": "SOP Pengelolaan Aset CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "rencana-anggaran-biaya-rab-cisdi-tahun-2023",
+    "name": "Rencana Anggaran Biaya (RAB) CISDI Tahun 2023",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pemilihan-konsumsi-sehat",
+    "name": "Pemilihan Konsumsi Sehat",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pemutusan-akses-email-karyawan-non-aktif",
+    "name": "Pemutusan Akses Email Karyawan Non-Aktif",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "prosedur-pengajuan-perjalanan-dinas",
+    "name": "Prosedur Pengajuan Perjalanan Dinas",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "standar-biaya-umum-sbu-cisdi",
+    "name": "Standar Biaya Umum (SBU) CISDI",
+    "type": "SOP",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-optimalisasi-linkedin-untuk-karyawan-cisdi",
+    "name": "Panduan Optimalisasi Linkedin untuk Karyawan CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "sop-konseling-kesehatan-mental",
+    "name": "SOP Konseling Kesehatan Mental",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-pelaksanaan-yayasan-ppy",
+    "name": "Pedoman Pelaksanaan Yayasan (PPY)",
+    "type": "SOP",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "alur-pengajuan-uji-kelayakan-etik-ethical-clearance-riset",
+    "name": "Alur Pengajuan Uji Kelayakan Etik / Ethical Clearance Riset",
+    "type": "SOP",
+    "division": "Research & Development",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-etika-yayasan-cisdi",
+    "name": "Pedoman Etika Yayasan CISDI",
+    "type": "SOP",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "sop-penilaian-kpi-karyawan",
+    "name": "SOP Penilaian KPI Karyawan",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-registrasi-dan-feedback-event",
+    "name": "Panduan Registrasi dan Feedback Event",
+    "type": "Pedoman Kerja",
+    "division": "Community & Public Engagement",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-peminjaman-barang-inventaris",
+    "name": "Panduan Peminjaman Barang Inventaris",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "asuransi-kumpulan-allianz",
+    "name": "Asuransi Kumpulan - Allianz",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "mekanisme-pengajuan-travel-request",
+    "name": "Mekanisme Pengajuan Travel Request",
+    "type": "Pedoman Kerja",
+    "division": "Finance & Administration",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-dokumentasi-kegiatan-cisdi",
+    "name": "Pedoman Dokumentasi Kegiatan CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Digital Communication",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penilaian-key-performance-indicator-kpi",
+    "name": "Panduan Penilaian Key Performance Indicator (KPI)",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penyusunan-key-performance-indicators-kpi",
+    "name": "Panduan Penyusunan Key Performance Indicators (KPI)",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "pedoman-dokumentasi-kegiatan-lapangan-dan-pengolahan-konten-",
+    "name": "Pedoman Dokumentasi Kegiatan Lapangan dan Pengolahan Konten Media Sosial CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Community & Public Engagement",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penerjemahan-dan-proofreading-produk-pengetahuan-cis",
+    "name": "Panduan Penerjemahan dan Proofreading Produk Pengetahuan CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Knowledge & Learning",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penggunaan-ruangan-kantor-cisdi",
+    "name": "Panduan Penggunaan Ruangan Kantor CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "kebijakan-anti-korupsi-dan-fraud",
+    "name": "Kebijakan Anti Korupsi dan Fraud",
+    "type": "SOP",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "prosedur-pengadaan-jasa-berbasis-perorangan",
+    "name": "Prosedur Pengadaan Jasa Berbasis Perorangan",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengembangan-produk-tim-it-development-cisdi",
+    "name": "Panduan Pengembangan Produk Tim IT Development CISDI",
+    "type": "Pedoman Kerja",
+    "division": "IT Development",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-identitas-visual-pencerah-nusantara",
+    "name": "Panduan Identitas Visual Pencerah Nusantara",
+    "type": "Pedoman Kerja",
+    "division": "Community & Public Engagement",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-pengajuan-pembaruan-data-karyawan-cisdi",
+    "name": "Panduan Pengajuan Pembaruan Data Karyawan CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "panduan-penyusunan-key-performance-indicators-kpi-2026",
+    "name": "Panduan Penyusunan Key Performance Indicators (KPI) - 2026",
+    "type": "Pedoman Kerja",
+    "division": "Corporate Secretary, Human Capital and General Affairs",
+    "status": "Authorized",
+    "pdfUrl": ""
+  },
+  {
+    "id": "brand-playbook-panduan-identitas-visual-cisdi",
+    "name": "Brand Playbook & Panduan Identitas Visual CISDI",
+    "type": "Pedoman Kerja",
+    "division": "Digital Communication",
+    "status": "Authorized",
+    "pdfUrl": ""
+  }
+]

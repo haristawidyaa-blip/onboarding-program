@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Search, FileText, ClipboardList, CheckCircle2, ChevronDown } from "lucide-react";
+import { Search, FileText, ClipboardList, CheckCircle2, ChevronDown, ExternalLink } from "lucide-react";
 import { sopData, sopDivisions } from "@/lib/sopData";
 
 const TYPE_FILTERS = ["Semua", "Pedoman Kerja", "SOP"] as const;
@@ -129,10 +129,23 @@ export function SopSection() {
                       {divisionShort[sop.division] ?? sop.division}
                     </td>
                     <td className="px-4 py-3.5">
-                      <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
-                        <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={2} />
-                        {sop.status}
-                      </span>
+                      <div className="flex items-center gap-3">
+                        <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
+                          <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={2} />
+                          {sop.status}
+                        </span>
+                        {sop.pdfUrl && (
+                          <a
+                            href={sop.pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400 hover:underline"
+                          >
+                            <ExternalLink className="h-3 w-3" strokeWidth={2} />
+                            PDF
+                          </a>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))
