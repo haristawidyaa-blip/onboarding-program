@@ -69,7 +69,8 @@ async function saveFile(
     }),
   });
   if (!res.ok) {
-    if (res.status === 401) throw new GithubContentError("Token tidak valid atau tidak punya akses tulis.");
+    if (res.status === 401) throw new GithubContentError("Token tidak valid atau sudah expired.");
+    if (res.status === 403) throw new GithubContentError("Token tidak punya izin tulis (write). Pastikan token PAT memiliki scope 'repo' (classic) atau 'Contents: Read and write' (fine-grained).");
     if (res.status === 409) throw new GithubContentError("Konflik: file sudah berubah di GitHub, muat ulang dulu.");
     throw new GithubContentError(`Gagal menyimpan (status ${res.status}).`);
   }
