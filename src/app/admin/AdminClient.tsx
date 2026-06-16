@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import {
   Plus,
@@ -17,6 +17,9 @@ import {
   FileText,
   ChevronDown,
   Link as LinkIcon,
+  KeyRound,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { LearningMaterial } from "@/lib/types";
 import { SopItem } from "@/lib/sopData";
@@ -397,18 +400,97 @@ function SopDivisionSelect({ value, onChange }: { value: string; onChange: (v: s
   );
 }
 
+// ── GitHub PAT connect form ───────────────────────────────────────────────────
+
+function ConnectForm({ onConnect }: { onConnect: () => void }) {
+  const [value, setValue] = useState("");
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const t = value.trim();
+    if (!t) return;
+    if (!t.startsWith("ghp_") && !t.startsWith("github_pat_")) {
+      setError("Format token tidak dikenal. Token biasanya diawali dengan ghp_ atau github_pat_.");
+      return;
+    }
+    storeToken(t);
+    onConnect();
+  }
+
+  return (
+    <div className="mt-8 rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/[0.04] p-6 max-w-lg">
+      <div className="flex items-center gap-2.5 mb-4">
+        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400">
+          <KeyRound className="h-4.5 w-4.5" strokeWidth={2} />
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-zinc-900 dark:text-white">Hubungkan GitHub</p>
+          <p className="text-xs text-zinc-500 dark:text-white/40">Diperlukan untuk membaca & menyimpan data</p>
+        </div>
+      </div>
+
+      <p className="mb-4 text-xs leading-relaxed text-zinc-500 dark:text-white/45">
+        Masukkan <strong className="text-zinc-700 dark:text-white/70">Personal Access Token (PAT)</strong> GitHub dengan izin{" "}
+        <code className="rounded bg-zinc-200 dark:bg-white/10 px-1 py-0.5 text-[11px]">repo</code> (classic) atau{" "}
+        <code className="rounded bg-zinc-200 dark:bg-white/10 px-1 py-0.5 text-[11px]">Contents: Read and write</code> (fine-grained).
+      </p>
+
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="relative">
+          <input
+            type={show ? "text" : "password"}
+            value={value}
+            onChange={(e) => { setValue(e.target.value); setError(""); }}
+            placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+            className="w-full rounded-xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-white/5 px-3.5 py-2.5 pr-10 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-300 dark:placeholder:text-white/20 outline-none focus:border-red-400 dark:focus:border-red-500/50 transition-colors font-mono"
+          />
+          <button
+            type="button"
+            onClick={() => setShow((v) => !v)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-white/30 hover:text-zinc-600 dark:hover:text-white/60 transition-colors"
+          >
+            {show ? <EyeOff className="h-4 w-4" strokeWidth={2} /> : <Eye className="h-4 w-4" strokeWidth={2} />}
+          </button>
+        </div>
+
+        {error && (
+          <div className="flex items-start gap-2 rounded-xl border border-amber-200 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/10 px-3.5 py-2.5 text-xs text-amber-700 dark:text-amber-400">
+            <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" strokeWidth={2} />
+            {error}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={!value.trim()}
+          className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500 disabled:opacity-40 transition-colors"
+        >
+          Hubungkan
+        </button>
+      </form>
+    </div>
+  );
+}
+
 // ── root component ────────────────────────────────────────────────────────────
 
 type Tab = "learning" | "sop";
 
 export function AdminClient() {
   const router = useRouter();
+  const [checked, setChecked] = useState(false);
   const [hasToken, setHasToken] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>("learning");
 
   useEffect(() => {
-    if (!getCmsAuthed()) router.replace("/admin/login");
-    else setHasToken(!!getToken());
+    if (!getCmsAuthed()) {
+      router.replace("/admin/login");
+      return;
+    }
+    setHasToken(!!getToken());
+    setChecked(true);
   }, [router]);
 
   function handleDisconnect() {
@@ -417,7 +499,11 @@ export function AdminClient() {
     router.replace("/admin/login");
   }
 
-  if (!hasToken) return null;
+  if (!checked) return null;
+
+  if (!hasToken) {
+    return <ConnectForm onConnect={() => setHasToken(true)} />;
+  }
 
   return (
     <div>
