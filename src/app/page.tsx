@@ -12,6 +12,9 @@ import {
   Target,
   CalendarClock,
   Rocket,
+  CalendarDays,
+  ListChecks,
+  TrendingUp,
 } from "lucide-react";
 
 const GOOGLE_FORM_URL =
@@ -78,24 +81,33 @@ export default function Home() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />
             </a>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
-                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{programDays.length} Hari</p>
-                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="group rounded-2xl border border-black/5 dark:border-white/15 bg-white/90 dark:bg-white/10 backdrop-blur-md p-5 transition-all hover:-translate-y-1 hover:bg-white dark:hover:bg-white/15 hover:shadow-lg">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <CalendarDays className="h-5 w-5" strokeWidth={2} />
+                </span>
+                <p className="mt-3 text-2xl font-semibold text-red-600 dark:text-red-400">{programDays.length} Hari</p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/80">
                   Durasi program orientasi karyawan baru CISDI.
                 </p>
               </div>
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
-                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">
+              <div className="group rounded-2xl border border-black/5 dark:border-white/15 bg-white/90 dark:bg-white/10 backdrop-blur-md p-5 transition-all hover:-translate-y-1 hover:bg-white dark:hover:bg-white/15 hover:shadow-lg">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <ListChecks className="h-5 w-5" strokeWidth={2} />
+                </span>
+                <p className="mt-3 text-2xl font-semibold text-red-600 dark:text-red-400">
                   {totalDone}/{totalTaskCount}
                 </p>
-                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/80">
                   Task yang sudah kamu selesaikan sejauh ini.
                 </p>
               </div>
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
-                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{pct}%</p>
-                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+              <div className="group rounded-2xl border border-black/5 dark:border-white/15 bg-white/90 dark:bg-white/10 backdrop-blur-md p-5 transition-all hover:-translate-y-1 hover:bg-white dark:hover:bg-white/15 hover:shadow-lg">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 transition-transform group-hover:scale-110 group-hover:rotate-6">
+                  <TrendingUp className="h-5 w-5" strokeWidth={2} />
+                </span>
+                <p className="mt-3 text-2xl font-semibold text-red-600 dark:text-red-400">{pct}%</p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/80">
                   Progress keseluruhan program onboardingmu.
                 </p>
               </div>
@@ -103,7 +115,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+          <div className="max-w-3xl">
           <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
             Sebelum Mulai
           </p>
@@ -118,10 +131,10 @@ export default function Home() {
             />
 
             <div className="group relative">
-              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 ring-4 ring-[#f5f5f7] dark:ring-white/10">
                 <Heart className="h-5 w-5" strokeWidth={2} />
               </span>
-              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
                 <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
                   Kamu mungkin merasa sangat bersemangat, mungkin juga sedikit
                   cemas. Tapi yang pasti—kamu siap untuk mulai berkontribusi.
@@ -130,10 +143,10 @@ export default function Home() {
             </div>
 
             <div className="group relative">
-              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 ring-4 ring-[#f5f5f7] dark:ring-white/10">
                 <Users className="h-5 w-5" strokeWidth={2} />
               </span>
-              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
                 <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
                   Untuk bisa berkontribusi dengan optimal, kita perlu saling
                   berkenalan. Laman ini akan membawamu melihat lebih dekat
@@ -145,10 +158,10 @@ export default function Home() {
             </div>
 
             <div className="group relative">
-              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 ring-4 ring-[#f5f5f7] dark:ring-white/10">
                 <Target className="h-5 w-5" strokeWidth={2} />
               </span>
-              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
                 <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
                   Selain itu, setiap topik yang kamu akses diharapkan dapat
                   membantumu untuk:
@@ -171,10 +184,10 @@ export default function Home() {
             </div>
 
             <div className="group relative">
-              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300 ring-4 ring-[#f5f5f7] dark:ring-white/10">
                 <CalendarClock className="h-5 w-5" strokeWidth={2} />
               </span>
-              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
                 <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
                   Program pembelajaran ini akan dilakukan selama 5 (lima) hari
                   ke depan dengan metode <em>blended learning</em>. Terdapat
@@ -190,7 +203,7 @@ export default function Home() {
             </div>
 
             <div className="group relative">
-              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-white ring-4 ring-[#f5f5f7] dark:ring-black">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-white ring-4 ring-[#f5f5f7] dark:ring-white/10">
                 <Rocket className="h-5 w-5" strokeWidth={2} />
               </span>
               <div className="rounded-2xl border border-red-200 dark:border-red-500/20 bg-red-50/60 dark:bg-red-500/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
@@ -224,6 +237,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-14">
@@ -245,7 +259,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 text-sm text-zinc-600 dark:text-white/60">
+          <div className="mt-10 rounded-3xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-6 text-sm text-zinc-600 dark:text-white/60">
             <p className="flex items-center gap-2 font-semibold text-zinc-900 dark:text-white mb-1.5">
               <HelpCircle className="h-4 w-4 text-red-600 dark:text-red-500" strokeWidth={2} />
               Butuh bantuan?

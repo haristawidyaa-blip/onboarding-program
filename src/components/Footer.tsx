@@ -1,15 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { programDays } from "@/lib/data";
 import { withBasePath } from "@/lib/basePath";
 import { InstagramIcon, TwitterIcon, FacebookIcon, LinkedinIcon } from "./SocialIcons";
 
 const socials = [
-  { label: "Instagram", href: "https://instagram.com/cisdi_id", Icon: InstagramIcon },
-  { label: "Twitter", href: "https://twitter.com/CISDI_ID", Icon: TwitterIcon },
-  { label: "Facebook", href: "https://facebook.com/cisdi.id", Icon: FacebookIcon },
-  { label: "LinkedIn", href: "https://linkedin.com/company/cisdi", Icon: LinkedinIcon },
+  { label: "Instagram", handle: "cisdi_id", href: "https://instagram.com/cisdi_id", Icon: InstagramIcon },
+  { label: "Twitter", handle: "@CISDI_ID", href: "https://twitter.com/CISDI_ID", Icon: TwitterIcon },
+  { label: "Facebook", handle: "CISDI", href: "https://www.facebook.com/cisdi", Icon: FacebookIcon },
+  {
+    label: "LinkedIn",
+    handle: "CISDI",
+    href: "https://www.linkedin.com/company/center-for-indonesia's-strategic-development-initiatives-cisdi-/posts/?feedView=all",
+    Icon: LinkedinIcon,
+  },
 ];
 
 export function Footer() {
@@ -30,20 +35,6 @@ export function Footer() {
             Program Orientasi Karyawan Baru — dikembangkan oleh Tim Human
             Capital &amp; Learning Development.
           </p>
-          <div className="mt-5 flex items-center gap-3">
-            {socials.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-red-500 hover:text-red-500 transition-colors"
-              >
-                <Icon className="h-3.5 w-3.5" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>
@@ -81,20 +72,40 @@ export function Footer() {
 
         <div>
           <p className="text-sm font-semibold text-white mb-3">Info Kontak</p>
-          <ul className="space-y-2 text-sm text-white/50">
-            <li className="flex items-start gap-1.5">
+          <ul className="space-y-2.5 text-sm text-white/50">
+            <li className="flex items-start gap-2">
               <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" strokeWidth={2} />
-              Jl. Tebet Barat Dalam VIII No.12, Jakarta Selatan
+              Jl. Probolinggo No. 40C RT.01/02, Kel. Gondangdia, Kec. Menteng, Jakarta Pusat, DKI Jakarta 10350
             </li>
-            <li>
-              <a
-                href="mailto:info@cisdi.org"
-                className="flex items-center gap-1.5 hover:text-white transition-colors"
-              >
-                <Mail className="h-3.5 w-3.5" strokeWidth={2} />
+            <li className="flex items-center gap-2">
+              <Phone className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+              <a href="tel:+62213917590" className="hover:text-white transition-colors">
+                (+62) 21 3917590
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+              <a href="mailto:info@cisdi.org" className="hover:text-white transition-colors">
                 info@cisdi.org
               </a>
             </li>
+          </ul>
+
+          <p className="text-sm font-semibold text-white mt-6 mb-3">Terhubung dengan CISDI</p>
+          <ul className="space-y-2.5 text-sm text-white/50">
+            {socials.map(({ label, handle, href, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <Icon className="h-3.5 w-3.5 shrink-0" />
+                  {handle}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
