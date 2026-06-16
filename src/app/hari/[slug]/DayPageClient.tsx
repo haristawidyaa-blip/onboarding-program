@@ -32,7 +32,7 @@ export function DayPageClient({
       <main className="flex-1">
         <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
           <Link
-            href="/"
+            href="/program/onboarding"
             className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:underline"
           >
             <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} />
@@ -119,7 +119,7 @@ export function DayPageClient({
               </Link>
             ) : (
               <Link
-                href="/"
+                href="/program/onboarding"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-red-600 hover:underline"
               >
                 Kembali ke Dashboard

@@ -12,7 +12,8 @@ import { clearAuthed } from "@/lib/auth";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
-  { label: "Dashboard", href: "/" },
+  { label: "Beranda", href: "/" },
+  { label: "Onboarding", href: "/program/onboarding" },
   { label: "Learning Space", href: "/belajar" },
 ];
 
@@ -132,7 +133,14 @@ export function Header() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-white/10 bg-[#161616] px-4 sm:px-6 py-4 space-y-3">
           <Link href="/" className="block text-sm font-medium text-white/85" onClick={() => setMobileOpen(false)}>
-            Dashboard
+            Beranda
+          </Link>
+          <Link
+            href="/program/onboarding"
+            className="block text-sm font-medium text-white/85"
+            onClick={() => setMobileOpen(false)}
+          >
+            Onboarding
           </Link>
           <Link
             href="/belajar"

@@ -63,8 +63,8 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/" className="hover:text-white transition-colors">
-                Kembali ke Dashboard
+              <Link href="/program/onboarding" className="hover:text-white transition-colors">
+                Kembali ke Dashboard Onboarding
               </Link>
             </li>
             <li>
