@@ -4,7 +4,10 @@ import { programDays } from "@/lib/data";
 import { DayPageClient } from "./DayPageClient";
 
 export function generateStaticParams() {
-  return programDays.map((day) => ({ slug: day.slug }));
+  // hari-1 has its own dedicated page at /hari/hari-1/
+  return programDays
+    .filter((day) => day.slug !== "hari-1")
+    .map((day) => ({ slug: day.slug }));
 }
 
 export async function generateMetadata({
