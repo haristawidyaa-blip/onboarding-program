@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import { programDays } from "@/lib/data";
 import { DayPageClient } from "./DayPageClient";
 
+const DEDICATED_SLUGS = new Set(["hari-1", "hari-2", "hari-3", "hari-4", "hari-5"]);
+
 export function generateStaticParams() {
-  // hari-1 has its own dedicated page at /hari/hari-1/
   return programDays
-    .filter((day) => day.slug !== "hari-1")
+    .filter((day) => !DEDICATED_SLUGS.has(day.slug))
     .map((day) => ({ slug: day.slug }));
 }
 
