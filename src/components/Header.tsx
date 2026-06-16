@@ -11,7 +11,10 @@ import { withBasePath } from "@/lib/basePath";
 import { clearAuthed } from "@/lib/auth";
 import { ThemeToggle } from "./ThemeToggle";
 
-const navLinks = [{ label: "Dashboard", href: "/" }];
+const navLinks = [
+  { label: "Dashboard", href: "/" },
+  { label: "Learning Space", href: "/belajar" },
+];
 
 export function Header() {
   const router = useRouter();
@@ -130,6 +133,13 @@ export function Header() {
         <div className="lg:hidden border-t border-white/10 bg-[#161616] px-4 sm:px-6 py-4 space-y-3">
           <Link href="/" className="block text-sm font-medium text-white/85" onClick={() => setMobileOpen(false)}>
             Dashboard
+          </Link>
+          <Link
+            href="/belajar"
+            className="block text-sm font-medium text-white/85"
+            onClick={() => setMobileOpen(false)}
+          >
+            Learning Space
           </Link>
           <div>
             <p className="text-xs uppercase tracking-wide text-white/40 mb-1.5">Jadwal Harian</p>

@@ -35,3 +35,10 @@ export interface ProgramDay {
   sections: ProgramSection[];
   note?: string;
 }
+
+export interface LearningMaterial {
+  id: string;
+  title: string;
+  categories: string[];
+  pdfUrl: string;
+}

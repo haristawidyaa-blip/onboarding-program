@@ -54,6 +54,7 @@ export const programDays: ProgramDay[] = [
             title: "Eksplorasi materi lain di Learning Space",
             description:
               "Pilih subjek atau materi yang dirasa paling relevan dengan pekerjaan yang akan kamu lakukan di CISDI.",
+            href: "/belajar",
             ctaLabel: "Buka Learning Space",
           },
           {
@@ -411,6 +412,7 @@ export const programDays: ProgramDay[] = [
             id: "d3-cakrawala",
             type: "link",
             title: "Jelajahi Cakrawala Belajar di Learning Space",
+            href: "/belajar",
             ctaLabel: "Buka Learning Space",
           },
         ],
