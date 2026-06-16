@@ -33,7 +33,7 @@ export function LoginClient() {
   return (
     <main className="flex min-h-screen bg-[#0a0a0a]">
       {/* ── Left panel ── */}
-      <div className="relative hidden lg:flex lg:w-[52%] flex-col justify-between p-14 overflow-hidden bg-[#0f0f0f]">
+      <div className="relative hidden lg:flex lg:w-[52%] flex-col items-start justify-center px-14 py-14 overflow-hidden bg-[#0f0f0f]">
         {/* glow blobs */}
         <div className="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-red-600/15 blur-[120px]" />
         <div className="pointer-events-none absolute bottom-0 -left-24 h-[360px] w-[360px] rounded-full bg-red-900/20 blur-[90px]" />
@@ -41,12 +41,12 @@ export function LoginClient() {
         <div className="pointer-events-none absolute inset-0 opacity-[0.035]"
           style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
 
-        {/* Logo */}
-        <div className="relative">
+        {/* Logo — pinned top-left */}
+        <div className="absolute top-10 left-14">
           <Image src={withBasePath("/cisdi-logo.png")} alt="CISDI" width={92} height={45} className="h-9 w-auto" unoptimized priority />
         </div>
 
-        {/* Body */}
+        {/* Body — truly centred */}
         <div className="relative">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/25 bg-red-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-red-400">
             Learning Management System
@@ -75,12 +75,12 @@ export function LoginClient() {
           </div>
         </div>
 
-        {/* Footer */}
-        <p className="relative text-xs text-white/20">© 2025 CISDI · Tim Knowledge &amp; Learning</p>
+        {/* Footer — pinned bottom-left */}
+        <p className="absolute bottom-10 left-14 text-xs text-white/20">© 2025 CISDI · Tim Knowledge &amp; Learning</p>
       </div>
 
       {/* ── Right panel: form ── */}
-      <div className="flex flex-1 flex-col items-center justify-center px-6 py-14 bg-[#111111]">
+      <div className="flex flex-1 flex-col items-center justify-center px-6 bg-[#111111]">
         {/* mobile logo */}
         <div className="mb-8 lg:hidden">
           <Image src={withBasePath("/cisdi-logo.png")} alt="CISDI" width={92} height={45} className="h-8 w-auto" unoptimized />
