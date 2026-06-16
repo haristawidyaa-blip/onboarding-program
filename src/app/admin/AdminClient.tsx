@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
-  KeyRound,
   Plus,
   Pencil,
   Trash2,
@@ -50,46 +50,6 @@ const SOP_DIVISIONS = [
   "Knowledge & Learning",
   "Research & Development",
 ] as const;
-
-// ── token gate ───────────────────────────────────────────────────────────────
-
-function TokenGate({ onConnect }: { onConnect: () => void }) {
-  const [input, setInput] = useState("");
-  function handleConnect() {
-    if (!input.trim()) return;
-    storeToken(input.trim());
-    setInput("");
-    onConnect();
-  }
-  return (
-    <div className="rounded-3xl border border-zinc-200/80 dark:border-white/15 bg-white dark:bg-white/[0.07] p-6 shadow-sm max-w-md">
-      <div className="flex items-center gap-2.5">
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-300">
-          <KeyRound className="h-4.5 w-4.5" strokeWidth={2} />
-        </span>
-        <h2 className="font-semibold text-zinc-900 dark:text-white">Masukkan GitHub Token</h2>
-      </div>
-      <p className="mt-3 text-sm text-zinc-600 dark:text-white/60 leading-relaxed">
-        Gunakan{" "}
-        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 underline">
-          fine-grained personal access token
-        </a>{" "}
-        dengan permission <strong>Contents: Read and write</strong>. Token disimpan hanya di browser ini.
-      </p>
-      <input
-        type="password" value={input} onChange={(e) => setInput(e.target.value)}
-        placeholder="github_pat_..."
-        className="mt-4 w-full rounded-xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-white/5 px-3.5 py-2.5 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 outline-none focus:border-red-400 dark:focus:border-red-500/50"
-      />
-      <button
-        onClick={handleConnect} disabled={!input.trim()}
-        className="mt-3 inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500 disabled:opacity-40 transition-colors"
-      >
-        Hubungkan
-      </button>
-    </div>
-  );
-}
 
 // ── learning materials tab ───────────────────────────────────────────────────
 
@@ -441,16 +401,22 @@ function SopDivisionSelect({ value, onChange }: { value: string; onChange: (v: s
 type Tab = "learning" | "sop";
 
 export function AdminClient() {
+  const router = useRouter();
   const [hasToken, setHasToken] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>("learning");
 
-  useEffect(() => { setHasToken(!!getToken()); }, []);
+  useEffect(() => {
+    const ok = !!getToken();
+    if (!ok) router.replace("/admin/login");
+    else setHasToken(true);
+  }, [router]);
 
   function handleDisconnect() {
-    clearToken(); setHasToken(false);
+    clearToken();
+    router.replace("/admin/login");
   }
 
-  if (!hasToken) return <TokenGate onConnect={() => setHasToken(true)} />;
+  if (!hasToken) return null;
 
   return (
     <div>
