@@ -2,7 +2,6 @@
 
 import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/CourseCard";
-import { SopSection } from "@/components/SopSection";
 import { courses } from "@/lib/courses";
 import { totalTaskCount } from "@/lib/data";
 import { useProgress } from "@/lib/useProgress";
@@ -53,25 +52,6 @@ export function HomeClient() {
                 progressPct={course.id === "onboarding" ? onboardingPct : undefined}
               />
             ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-16">
-          <div className="border-t border-zinc-200/80 dark:border-white/10 pt-12">
-            <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
-              Dokumen Organisasi
-            </p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#161616] dark:text-white">
-              SOP &amp; Pedoman Kerja CISDI
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm text-zinc-600 dark:text-white/60 leading-relaxed">
-              Seluruh dokumen SOP dan pedoman kerja yang berlaku di CISDI.
-              Cari berdasarkan nama, jenis, atau divisi pemilik.
-            </p>
-
-            <div className="mt-8">
-              <SopSection />
-            </div>
           </div>
         </section>
       </main>

@@ -19,6 +19,7 @@ const navPlatform = [
   { label: "Beranda", href: "/" },
   { label: "Onboarding", href: "/program/onboarding" },
   { label: "Learning Space", href: "/belajar" },
+  { label: "SOP & Pedoman Kerja", href: "/sop" },
 ];
 
 const navSumber = [

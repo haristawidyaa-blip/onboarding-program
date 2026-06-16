@@ -1,6 +1,7 @@
-import { GraduationCap, BookOpen, type LucideIcon } from "lucide-react";
+import { GraduationCap, BookOpen, FileText, type LucideIcon } from "lucide-react";
 import { programDays, totalTaskCount } from "./data";
 import { learningMaterials } from "./learningSpace";
+import { sopData } from "./sopData";
 
 export interface Course {
   id: string;
@@ -31,6 +32,16 @@ export const courses: Course[] = [
     href: "/belajar",
     icon: BookOpen,
     meta: `${learningMaterials.length} Materi`,
+    kind: "library",
+  },
+  {
+    id: "sop",
+    title: "SOP & Pedoman Kerja",
+    description:
+      "Seluruh SOP dan pedoman kerja CISDI yang berlaku — dari keuangan, HR, komunikasi, hingga kebijakan etika organisasi.",
+    href: "/sop",
+    icon: FileText,
+    meta: `${sopData.length} Dokumen`,
     kind: "library",
   },
 ];
