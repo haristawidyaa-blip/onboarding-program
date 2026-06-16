@@ -127,7 +127,7 @@ export default function Home() {
 
           <div className="relative mt-10 space-y-6 pl-14 sm:pl-16">
             <div
-              className="absolute left-[23px] sm:left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-red-300 via-red-200 to-transparent dark:from-red-500/40 dark:via-red-500/10 dark:to-transparent"
+              className="absolute left-[23px] sm:left-[27px] top-12 bottom-12 border-l-2 border-dashed border-red-200 dark:border-red-500/25"
               aria-hidden
             />
 

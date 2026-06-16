@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { Footer } from "@/components/Footer";
+import { AuthGate } from "@/components/AuthGate";
+import { ConditionalFooter } from "@/components/ConditionalFooter";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -33,8 +34,8 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#f5f5f7] text-[#1d1d1f] dark:bg-black dark:text-[#f5f5f7]">
-        {children}
-        <Footer />
+        <AuthGate>{children}</AuthGate>
+        <ConditionalFooter />
       </body>
     </html>
   );
