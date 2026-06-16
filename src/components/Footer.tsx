@@ -15,11 +15,25 @@ const socials = [
   },
 ];
 
+const navPlatform = [
+  { label: "Beranda", href: "/" },
+  { label: "Onboarding", href: "/program/onboarding" },
+  { label: "Learning Space", href: "/belajar" },
+];
+
+const navSumber = [
+  { label: "PRD", href: "/prd" },
+  { label: "Kelola Materi", href: "/admin" },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-[#0f0f0f] text-white/70">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        <div className="sm:col-span-1">
+    <footer className="bg-[#111111] text-white/60">
+      <div className="h-0.5 bg-gradient-to-r from-red-600 via-red-500/60 to-transparent" />
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* Brand */}
+        <div className="lg:col-span-1">
           <Image
             src={withBasePath("/cisdi-logo.png")}
             alt="CISDI"
@@ -28,15 +42,15 @@ export function Footer() {
             className="h-7 w-auto"
             unoptimized
           />
-          <p className="mt-3 text-sm leading-relaxed text-white/50">
-            Center for Indonesia&apos;s Strategic Development Initiatives —
-            membangun SDM yang sehat, adil, dan setara.
+          <p className="mt-3 text-sm leading-relaxed text-white/45">
+            Platform pembelajaran digital CISDI — onboarding, materi mandiri,
+            dan pengembangan SDM dalam satu tempat.
           </p>
-          <p className="mt-1.5 text-xs text-white/30">
+          <p className="mt-2 text-xs text-white/25">
             Dikembangkan oleh{" "}
-            <span className="text-white/50 font-medium">Tim Knowledge &amp; Learning</span>.
+            <span className="text-white/45 font-medium">Tim Knowledge &amp; Learning</span>
           </p>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4 flex items-center gap-2">
             {socials.map(({ label, href, Icon }) => (
               <a
                 key={label}
@@ -44,7 +58,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 text-white/40 hover:border-white/30 hover:text-white/80 transition-colors"
+                className="flex h-7 w-7 items-center justify-center rounded-md bg-white/5 text-white/35 hover:bg-red-600/20 hover:text-red-400 transition-colors"
               >
                 <Icon className="h-3.5 w-3.5" />
               </a>
@@ -52,51 +66,85 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Platform */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-3">Navigasi</p>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/program/onboarding" className="hover:text-white transition-colors">
-                Laman Belajar
-              </Link>
-            </li>
-            <li>
-              <Link href="/belajar" className="hover:text-white transition-colors">
-                Learning Space
-              </Link>
-            </li>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-red-500/80 mb-4">
+            Platform
+          </p>
+          <ul className="space-y-2.5 text-sm">
+            {navPlatform.map(({ label, href }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="hover:text-white hover:translate-x-0.5 inline-block transition-all"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Sumber */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-3">Kontak</p>
-          <ul className="space-y-2 text-sm text-white/50">
-            <li className="flex items-center gap-2">
-              <Phone className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-              <a href="tel:+62213917590" className="hover:text-white transition-colors">
-                (+62) 21 3917590
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-              <a href="mailto:info@cisdi.org" className="hover:text-white transition-colors">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-red-500/80 mb-4">
+            Sumber
+          </p>
+          <ul className="space-y-2.5 text-sm">
+            {navSumber.map(({ label, href }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="hover:text-white hover:translate-x-0.5 inline-block transition-all"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Kontak */}
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-red-500/80 mb-4">
+            Kontak
+          </p>
+          <ul className="space-y-2.5 text-sm">
+            <li>
+              <a
+                href="mailto:info@cisdi.org"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5 shrink-0 text-white/30" strokeWidth={2} />
                 info@cisdi.org
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-              <a href="mailto:humancapital@cisdi.org" className="hover:text-white transition-colors">
+            <li>
+              <a
+                href="mailto:humancapital@cisdi.org"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5 shrink-0 text-white/30" strokeWidth={2} />
                 humancapital@cisdi.org
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+62213917590"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone className="h-3.5 w-3.5 shrink-0 text-white/30" strokeWidth={2} />
+                (+62) 21 3917590
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/30">
+      <div className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/25">
           <p>© {new Date().getFullYear()} CISDI. Seluruh hak cipta dilindungi.</p>
-          <p>Portal Onboarding Karyawan Baru CISDI</p>
+          <p>LMS CISDI &mdash; Program Orientasi Karyawan Baru</p>
         </div>
       </div>
     </footer>
