@@ -11,8 +11,8 @@ export function AuthGate({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const authed = isAuthed();
-    if (pathname === "/login") {
-      if (authed) {
+    if (pathname === "/login" || pathname.startsWith("/admin")) {
+      if (pathname === "/login" && authed) {
         router.replace("/");
         return;
       }
