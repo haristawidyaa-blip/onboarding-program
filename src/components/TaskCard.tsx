@@ -55,10 +55,10 @@ export function TaskCard({
         <button
           onClick={onToggle}
           aria-label={done ? "Tandai belum selesai" : "Tandai selesai"}
-          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
+          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 transition-all active:scale-90 ${
             done
-              ? "border-red-600 bg-red-600 text-white"
-              : "border-zinc-300 dark:border-white/20 text-transparent hover:border-red-400"
+              ? "border-red-600 bg-red-600 text-white scale-105"
+              : "border-zinc-300 dark:border-white/20 text-transparent hover:border-red-400 hover:scale-105"
           }`}
         >
           <Check className="h-3.5 w-3.5" strokeWidth={3} />

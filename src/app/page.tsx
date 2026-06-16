@@ -1,6 +1,21 @@
 "use client";
 
-import { Home as HomeIcon, ChevronRight, ArrowRight, HelpCircle, Lightbulb } from "lucide-react";
+import {
+  Home as HomeIcon,
+  ChevronRight,
+  ArrowRight,
+  ArrowUpRight,
+  HelpCircle,
+  Lightbulb,
+  Heart,
+  Users,
+  Target,
+  CalendarClock,
+  Rocket,
+} from "lucide-react";
+
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScHcMMSNKyjLa-M7hUNDXkae3oLoI4mB09OdzMSI3VmxCNLwg/viewform?usp=send_form";
 import { Header } from "@/components/Header";
 import { DayCard } from "@/components/DayCard";
 import { programDays, totalTaskCount } from "@/lib/data";
@@ -57,20 +72,20 @@ export default function Home() {
 
             <a
               href={`/hari/${nextDay.slug}`}
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
+              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/20 transition-all hover:bg-red-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-red-600/30 active:translate-y-0"
             >
               Lanjutkan ke {nextDay.title}
-              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />
             </a>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
                 <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{programDays.length} Hari</p>
                 <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
                   Durasi program orientasi karyawan baru CISDI.
                 </p>
               </div>
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
                 <p className="text-2xl font-semibold text-red-600 dark:text-red-500">
                   {totalDone}/{totalTaskCount}
                 </p>
@@ -78,7 +93,7 @@ export default function Home() {
                   Task yang sudah kamu selesaikan sejauh ini.
                 </p>
               </div>
-              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5 transition-all hover:-translate-y-1 hover:bg-zinc-50 dark:hover:bg-white/15 hover:shadow-lg">
                 <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{pct}%</p>
                 <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
                   Progress keseluruhan program onboardingmu.
@@ -89,52 +104,125 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14">
-          <div className="space-y-4 text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
-            <p>
-              Kamu mungkin merasa sangat bersemangat, mungkin juga sedikit
-              cemas. Tapi yang pasti—kamu siap untuk mulai berkontribusi.
-            </p>
-            <p>
-              Untuk bisa berkontribusi dengan optimal, kita perlu saling
-              berkenalan. Laman ini akan membawamu melihat lebih dekat CISDI,
-              apa yang sudah kita kerjakan, dan apa yang mendorong kita untuk
-              terus memperjuangkannya sehingga membantumu beradaptasi dengan
-              situasi dan lingkungan kerja di CISDI.
-            </p>
-            <p>Selain itu, setiap topik yang kamu akses diharapkan dapat membantumu untuk:</p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
-                <span>memahami &amp; menghayati visi, misi, nilai-nilai/prinsip-prinsip CISDI,</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
-                <span>memiliki sikap saling memahami ekspektasi antara CISDI dengan karyawan,</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
-                <span>menunjukkan kesiapan berperan &amp; berkontribusi di CISDI.</span>
-              </li>
-            </ul>
-            <p>
-              Program pembelajaran ini akan dilakukan selama 5 (lima) hari ke
-              depan dengan metode blended learning. Terdapat materi
-              asinkronus pada laman Notion yang bisa kamu akses secara
-              mandiri dan disesuaikan dengan pengelolaan waktu kamu saat ini.
-              Akses materi juga dilengkapi dengan pertemuan secara sinkronus,
-              baik daring maupun luring. Pertemuan sinkronus ini dilakukan
-              sebagai sesi penyelarasan di setiap hari dan praktik mandiri
-              dari materi asinkronus yang kamu akses.
-            </p>
-            <p>
-              Kamu dapat memulai pembelajaran dengan menggunakan fitur yang
-              tersedia pada setiap laman materi di setiap harinya. Sebelum
-              menjelajah materi harian, sila mengisi borang ini sebagai
-              langkah awal pembelajaran di Program Orientasi Karyawan CISDI.
-              Mari terlibat di setiap langkah materi pembelajaran untuk
-              mencapai tujuan pembelajarannya. Selamat belajar dan sampai
-              jumpa di kelas!
-            </p>
+          <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
+            Sebelum Mulai
+          </p>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#161616] dark:text-white">
+            Yuk, kenalan dulu dengan CISDI
+          </h2>
+
+          <div className="relative mt-10 space-y-6 pl-14 sm:pl-16">
+            <div
+              className="absolute left-[23px] sm:left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-red-300 via-red-200 to-transparent dark:from-red-500/40 dark:via-red-500/10 dark:to-transparent"
+              aria-hidden
+            />
+
+            <div className="group relative">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+                <Heart className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+                <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
+                  Kamu mungkin merasa sangat bersemangat, mungkin juga sedikit
+                  cemas. Tapi yang pasti—kamu siap untuk mulai berkontribusi.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+                <Users className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+                <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
+                  Untuk bisa berkontribusi dengan optimal, kita perlu saling
+                  berkenalan. Laman ini akan membawamu melihat lebih dekat
+                  CISDI, apa yang sudah kita kerjakan, dan apa yang mendorong
+                  kita untuk terus memperjuangkannya sehingga membantumu
+                  beradaptasi dengan situasi dan lingkungan kerja di CISDI.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+                <Target className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+                <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
+                  Selain itu, setiap topik yang kamu akses diharapkan dapat
+                  membantumu untuk:
+                </p>
+                <ul className="mt-3 space-y-2">
+                  <li className="flex items-start gap-2 text-[15px] text-zinc-700 dark:text-white/70">
+                    <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
+                    <span>memahami &amp; menghayati visi, misi, nilai-nilai/prinsip-prinsip CISDI,</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[15px] text-zinc-700 dark:text-white/70">
+                    <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
+                    <span>memiliki sikap saling memahami ekspektasi antara CISDI dengan karyawan,</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[15px] text-zinc-700 dark:text-white/70">
+                    <Lightbulb className="h-4 w-4 mt-0.5 shrink-0 text-red-600 dark:text-red-500" strokeWidth={2} />
+                    <span>menunjukkan kesiapan berperan &amp; berkontribusi di CISDI.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 ring-4 ring-[#f5f5f7] dark:ring-black">
+                <CalendarClock className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <div className="rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+                <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
+                  Program pembelajaran ini akan dilakukan selama 5 (lima) hari
+                  ke depan dengan metode <em>blended learning</em>. Terdapat
+                  materi asinkronus pada laman Notion yang bisa kamu akses
+                  secara mandiri dan disesuaikan dengan pengelolaan waktu kamu
+                  saat ini. Akses materi juga dilengkapi dengan pertemuan
+                  secara sinkronus, baik daring maupun luring. Pertemuan
+                  sinkronus ini dilakukan sebagai sesi penyelarasan di setiap
+                  hari dan praktik mandiri dari materi asinkronus yang kamu
+                  akses.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <span className="absolute -left-14 sm:-left-16 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-white ring-4 ring-[#f5f5f7] dark:ring-black">
+                <Rocket className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <div className="rounded-2xl border border-red-200 dark:border-red-500/20 bg-red-50/60 dark:bg-red-500/5 p-5 shadow-sm transition-all group-hover:shadow-md group-hover:-translate-y-0.5">
+                <p className="text-[15px] leading-relaxed text-zinc-700 dark:text-white/70">
+                  Kamu dapat memulai pembelajaran dengan menggunakan fitur
+                  yang tersedia pada setiap laman materi di setiap harinya.
+                  Sebelum menjelajah materi harian, sila mengisi{" "}
+                  <a
+                    href={GOOGLE_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-semibold text-red-600 dark:text-red-400 hover:underline"
+                  >
+                    borang ini
+                    <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                  </a>{" "}
+                  sebagai langkah awal pembelajaran di Program Orientasi
+                  Karyawan CISDI. Mari terlibat di setiap langkah materi
+                  pembelajaran untuk mencapai tujuan pembelajarannya. Selamat
+                  belajar dan sampai jumpa di kelas!
+                </p>
+                <a
+                  href={GOOGLE_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
+                >
+                  Isi Borang Sekarang
+                  <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
