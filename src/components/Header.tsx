@@ -3,17 +3,25 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, Mail } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ChevronDown, Menu, Mail, LogOut } from "lucide-react";
 import { programDays } from "@/lib/data";
 import { dayIconMap } from "@/lib/dayIcons";
 import { withBasePath } from "@/lib/basePath";
+import { clearAuthed } from "@/lib/auth";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [{ label: "Dashboard", href: "/" }];
 
 export function Header() {
+  const router = useRouter();
   const [scheduleOpen, setScheduleOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  function handleLogout() {
+    clearAuthed();
+    router.replace("/login");
+  }
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/10 bg-[#161616]">
@@ -82,6 +90,14 @@ export function Header() {
 
         <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
+          <button
+            onClick={handleLogout}
+            aria-label="Keluar"
+            title="Keluar"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/80 hover:border-red-500 hover:text-red-500 transition-colors"
+          >
+            <LogOut className="h-4 w-4" strokeWidth={2} />
+          </button>
           <Link
             href={`/hari/${programDays[0].slug}`}
             className="inline-flex items-center rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
@@ -92,6 +108,14 @@ export function Header() {
 
         <div className="lg:hidden flex items-center gap-2">
           <ThemeToggle />
+          <button
+            onClick={handleLogout}
+            aria-label="Keluar"
+            title="Keluar"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/80 hover:border-red-500 hover:text-red-500 transition-colors"
+          >
+            <LogOut className="h-4 w-4" strokeWidth={2} />
+          </button>
           <button
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/80"
             aria-label="Buka menu navigasi"

@@ -67,6 +67,11 @@ export function Footer() {
                 Kembali ke Dashboard
               </Link>
             </li>
+            <li>
+              <Link href="/prd" className="hover:text-white transition-colors">
+                Dokumentasi PRD
+              </Link>
+            </li>
           </ul>
         </div>
 
