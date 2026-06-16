@@ -50,7 +50,7 @@ function buildSearchIndex(): SearchItem[] {
     items.push({
       id: `prd-${section.id}`,
       title: section.title,
-      description: "PRD — Onboarding CISDI",
+      description: "PRD — LMS CISDI",
       href: `/prd#${section.id}`,
       group: "PRD",
     });

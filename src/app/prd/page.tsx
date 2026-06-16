@@ -11,7 +11,7 @@ export default function PrdPage() {
             Dokumentasi Internal
           </p>
           <h1 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#161616] dark:text-white">
-            PRD — Onboarding CISDI
+            PRD — LMS CISDI
           </h1>
           <p className="mt-3 text-sm text-zinc-600 dark:text-white/60 leading-relaxed">
             Product Requirements Document untuk aplikasi dashboard Program

@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Onboarding CISDI | Program Orientasi Karyawan Baru",
+  title: "LMS CISDI | Program Orientasi Karyawan Baru",
   description: "LMS Program Orientasi Karyawan Baru CISDI",
 };
 
