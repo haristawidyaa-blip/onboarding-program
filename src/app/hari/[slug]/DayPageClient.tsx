@@ -77,6 +77,12 @@ export function DayPageClient({
                 <h2 className="text-base font-semibold text-zinc-900 dark:text-white mb-3">
                   {section.title}
                 </h2>
+                {section.note && (
+                  <p className="mb-3 flex items-start gap-2 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 px-3.5 py-2.5 text-xs text-blue-700 dark:text-blue-300 leading-relaxed">
+                    <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" strokeWidth={2} />
+                    {section.note}
+                  </p>
+                )}
                 <div className="space-y-3">
                   {section.tasks.map((task) => (
                     <TaskCard

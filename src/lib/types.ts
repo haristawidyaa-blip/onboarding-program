@@ -20,6 +20,7 @@ export interface ProgramTask {
 export interface ProgramSection {
   id: string;
   title: string;
+  note?: string;
   tasks: ProgramTask[];
 }
 

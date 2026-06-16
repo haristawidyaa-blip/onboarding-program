@@ -83,30 +83,36 @@ export const programDays: ProgramDay[] = [
         ],
       },
       {
-        id: "ekosistem-kerja",
-        title: "Mengenal Ekosistem Kerja dan Komunikasi CISDI",
+        id: "media-komunikasi",
+        title: "1. Media Komunikasi Internal",
+        note: "Sebelum memulai tahapan ini, pastikan kamu telah menerima akun email dari Tim Human Capital (berupa alamat email dan kata sandi atau tautan aktivasi) yang dikirimkan ke email pribadimu.",
         tasks: [
           {
             id: "d1-gmail",
             type: "action",
             title: "Aktivasi & lengkapi akun Gmail CISDI",
-            description: "Pastikan kamu sudah menerima akun email dari Tim Human Capital.",
+            description:
+              "Google Mail (Gmail) merupakan platform surat elektronik yang dikembangkan Google dan terintegrasi dengan layanan-layanan di dalam ekosistem Google.",
             steps: [
-              "Ubah dan reset password akun Gmail",
+              "Ubah dan reset password akun Gmail (buka Akun Google → Keamanan → Login ke Google → Sandi)",
               "Tambahkan foto profil (kemeja/blouse putih, latar abu-abu)",
-              "Tambahkan Email Signature CISDI",
+              "Tambahkan Email Signature CISDI sesuai template yang tersedia",
             ],
           },
           {
             id: "d1-group-email",
             type: "document",
             title: "Pelajari Email & Group Mailing List Directory",
+            description:
+              "Akses dan pelajari direktori email grup atau tim yang dapat digunakan untuk menunjang kebutuhan koordinasi lintas unit.",
             ctaLabel: "Buka direktori",
           },
           {
             id: "d1-slack-video",
             type: "video",
             title: "Berkenalan dengan Slack",
+            description:
+              "CISDI memaksimalkan penggunaan Slack sebagai portal utama komunikasi internal sehari-hari.",
             href: "https://youtu.be/6wjmH5qL3Ms",
             ctaLabel: "Tonton video",
           },
@@ -115,17 +121,28 @@ export const programDays: ProgramDay[] = [
             type: "action",
             title: "Bergabung dan lengkapi profil di Slack CISDI",
             steps: [
-              "Login Slack di gawai/perangkat kerja",
-              "Lengkapi profil: foto, posisi kerja, email CISDI, nomor WhatsApp",
-              "Atur notifikasi dan status sesuai preferensi",
+              "Login Slack di gawai/perangkat kerja via slack.com/signin atau aplikasi Slack",
+              "Lengkapi profil: foto, informasi posisi kerja di CISDI, email CISDI, nomor WhatsApp",
+              "Atur pengaturan notifikasi dan status sesuai preferensi",
               "Kenali channel utama: #cisdi-hq, #random, #tech-optimization",
-              "Hubungi supervisor melalui Slack untuk memperkenalkan diri",
+              "Hubungi manager/lead supervisor melalui Slack untuk memperkenalkan diri",
             ],
+          },
+          {
+            id: "d1-slack-notif-video",
+            type: "video",
+            title: "Cara mengatur notifikasi di Slack",
+            description:
+              "Agar kamu tidak tertinggal notifikasi atau meminimalisir distraksi di Slack, pelajari cara menyesuaikan pengaturan notifikasi.",
+            href: "https://youtu.be/wuyWwzazef8",
+            ctaLabel: "Tonton video",
           },
           {
             id: "d1-pedoman-komunikasi",
             type: "document",
             title: "Pelajari Pedoman Komunikasi Internal CISDI",
+            description:
+              "Pelajari ketentuan komunikasi internal untuk mengurangi terjadinya miskomunikasi dalam sirkulasi informasi antar karyawan CISDI.",
             ctaLabel: "Buka pedoman",
           },
           {
@@ -133,30 +150,65 @@ export const programDays: ProgramDay[] = [
             type: "action",
             title: "Praktik Mengenali Ekosistem Komunikasi CISDI",
             steps: [
-              "Agendakan jadwal pertemuan dengan Supervisormu pekan ini",
-              "Gunakan Slack untuk menyepakati waktu pertemuan",
-              "Buat undangan di Google Calendar lengkap dengan deskripsi, tag @Yurdhinda Aprilia dan @ayu.purnamasari@cisdi.org",
-              "Lakukan pertemuan untuk membahas peran dan lingkup pekerjaanmu",
+              "Agendakan jadwal pertemuan dengan Supervisormu pada pekan ini",
+              "Gunakan Slack untuk menghubungi secara personal dan menyepakati waktu pertemuan",
+              "Buat undangan pertemuan lengkap dengan deskripsi menggunakan Google Calendar, tag @Yurdhinda Aprilia dan @ayu.purnamasari@cisdi.org",
+              "Lakukan pertemuan yang telah dijadwalkan untuk membahas peran dan lingkup pekerjaanmu",
             ],
           },
+        ],
+      },
+      {
+        id: "proses-kerja",
+        title: "2. Proses Kerja (Working Process)",
+        note: "CISDI memaksimalkan penggunaan ekosistem Google Workspace untuk menunjang aktivitas kerja sehari-hari.",
+        tasks: [
           {
             id: "d1-gcal",
             type: "document",
             title: "Pelajari Google Calendar & ketentuan Time Tracking",
+            description:
+              "CISDI memaksimalkan Google Calendar untuk mendokumentasikan waktu kerja (time tracking) dan mengatur agenda pertemuan serta aktivitas individu (Focus Time).",
             ctaLabel: "Pelajari lebih lanjut",
           },
           {
             id: "d1-gmeet",
             type: "document",
             title: "Pelajari Google Meet",
+            description:
+              "Google Meet digunakan sebagai medium utama pertemuan virtual bagi lintas unit di internal maupun eksternal CISDI.",
             ctaLabel: "Pelajari lebih lanjut",
           },
+          {
+            id: "d1-gdocs",
+            type: "document",
+            title: "Pelajari Google Docs, Spreadsheet, dan Slides",
+            description:
+              "CISDI memaksimalkan platform pengolahan kata, angka, dan visual dari Google: Google Docs, Google Spreadsheet, dan Google Slides.",
+            ctaLabel: "Pelajari lebih lanjut",
+          },
+        ],
+      },
+      {
+        id: "penyimpanan-dokumen",
+        title: "3. Penyimpanan Dokumen (Storage)",
+        note: "CISDI memaksimalkan penggunaan Google Drive sebagai medium penyimpanan berbasis cloud. Fitur ini terintegrasi dengan setiap akun berdomain xxx@cisdi.org.",
+        tasks: [
           {
             id: "d1-gdrive",
             type: "document",
             title: "Pelajari Google Drive & Shared Drive (CISDI Internal Knowledge Hub)",
+            description:
+              "Shared Drive: CISDI Internal Knowledge Hub digunakan untuk media penyimpanan dan berbagi dokumen yang dapat diakses oleh seluruh akun berdomain cisdi.org.",
             ctaLabel: "Pelajari lebih lanjut",
           },
+        ],
+      },
+      {
+        id: "knowledge-hub",
+        title: "4. Portal Informasi dan Pengetahuan (Knowledge Hub)",
+        note: "CISDI memaksimalkan Notion sebagai pusat informasi dan pengetahuan internal. Portal informasi ini dapat digunakan sebagai rujukan mengakses informasi seputar CISDI, prosedur kerja, dashboard, dan informasi pendukung pekerjaan lainnya.",
+        tasks: [
           {
             id: "d1-notion-video",
             type: "video",
@@ -169,12 +221,18 @@ export const programDays: ProgramDay[] = [
             type: "action",
             title: "Sign up & login ke Notion (CISDI Wiki)",
             description:
-              "Akses terhubung dengan email CISDI. Hubungi Tim Human Capital / Knowledge & Learning jika belum mendapat akses.",
+              "Akses ke Notion akan terhubung dengan email CISDI. Kamu akan mendapatkan email berisi undangan untuk membuat akun. Hubungi Tim Human Capital atau Knowledge & Learning apabila belum mendapatkan akses.",
+            steps: [
+              "Akses melalui browser: login di notion.so atau tambahkan bookmark",
+              "Akses melalui aplikasi: unduh Notion di App Store, Playstore, atau notion.so/desktop",
+            ],
           },
           {
             id: "d1-pum",
             type: "action",
             title: "Isi Personal User Manual di Employee Directory",
+            description:
+              "Jika sudah berhasil log in, lengkapi profil Personal User Manual template agar rekan-rekan di CISDI bisa mengenal kamu.",
             ctaLabel: "Buka Employee Directory",
           },
         ],
@@ -188,7 +246,7 @@ export const programDays: ProgramDay[] = [
             type: "meeting",
             title: "Ikuti Sesi Penyelarasan Hari Pertama",
             description:
-              "Sesi dilaksanakan sesuai jadwal di kalender Google. Pastikan kamu telah mengakses seluruh materi asinkronus hari pertama sebelum sesi berlangsung.",
+              "Sesi penyelarasan dilaksanakan sesuai dengan jadwal yang telah tercantum pada kalender Google. Pastikan telah mengakses seluruh materi asinkronus laman program orientasi karyawan CISDI hari pertama.",
           },
         ],
       },
