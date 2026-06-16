@@ -1,9 +1,11 @@
 "use client";
 
+import { Home as HomeIcon, ChevronRight, ArrowRight, HelpCircle } from "lucide-react";
 import { Header } from "@/components/Header";
 import { DayCard } from "@/components/DayCard";
 import { programDays, totalTaskCount } from "@/lib/data";
 import { useProgress } from "@/lib/useProgress";
+import { withBasePath } from "@/lib/basePath";
 
 function countDayTasks(day: (typeof programDays)[number]) {
   return day.sections.reduce((sum, sec) => sum + sec.tasks.length, 0);
@@ -35,17 +37,17 @@ export default function Home() {
       <main className="flex-1">
         <section
           className="relative bg-[#161616] bg-cover bg-center"
-          style={{ backgroundImage: "url(/hero-bergabung.png)" }}
+          style={{ backgroundImage: `url(${withBasePath("/hero-bergabung.png")})` }}
         >
           <div className="absolute inset-0 bg-[#0f0f0f]/80" aria-hidden />
           <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-14">
             <div className="flex items-center gap-2 text-sm text-white/60">
-              <span aria-hidden>🏠</span>
-              <span aria-hidden>›</span>
+              <HomeIcon className="h-4 w-4" strokeWidth={2} />
+              <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} />
               <span className="font-semibold text-white">Program Orientasi Karyawan Baru</span>
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-3xl sm:text-5xl font-bold text-white leading-tight">
+            <h1 className="mt-6 max-w-3xl text-3xl sm:text-5xl font-semibold tracking-tight text-white leading-tight">
               Selamat bergabung di CISDI, mari mulai hari pertamamu!
             </h1>
             <p className="mt-5 max-w-2xl text-white/70 text-sm sm:text-base leading-relaxed">
@@ -57,29 +59,29 @@ export default function Home() {
 
             <a
               href={`/hari/${nextDay.slug}`}
-              className="mt-7 inline-flex items-center gap-2 rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
             >
               Lanjutkan ke {nextDay.title}
-              <span aria-hidden>→</span>
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </a>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
-                <p className="text-2xl font-bold text-red-600 dark:text-red-500">{programDays.length} Hari</p>
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{programDays.length} Hari</p>
                 <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
                   Durasi program orientasi karyawan baru CISDI.
                 </p>
               </div>
-              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
-                <p className="text-2xl font-bold text-red-600 dark:text-red-500">
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">
                   {totalDone}/{totalTaskCount}
                 </p>
                 <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
                   Task yang sudah kamu selesaikan sejauh ini.
                 </p>
               </div>
-              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
-                <p className="text-2xl font-bold text-red-600 dark:text-red-500">{pct}%</p>
+              <div className="rounded-2xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-semibold text-red-600 dark:text-red-500">{pct}%</p>
                 <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
                   Progress keseluruhan program onboardingmu.
                 </p>
@@ -92,7 +94,7 @@ export default function Home() {
           <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
             Jadwal Harian
           </p>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#161616] dark:text-white max-w-2xl">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#161616] dark:text-white max-w-2xl">
             Kesempatan belajar dan menjadi bagian dari CISDI, satu hari pada satu waktu
           </h2>
 
@@ -107,8 +109,11 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 text-sm text-zinc-600 dark:text-white/60">
-            <p className="font-semibold text-zinc-900 dark:text-white mb-1.5">Butuh bantuan?</p>
+          <div className="mt-10 rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 text-sm text-zinc-600 dark:text-white/60">
+            <p className="flex items-center gap-2 font-semibold text-zinc-900 dark:text-white mb-1.5">
+              <HelpCircle className="h-4 w-4 text-red-600 dark:text-red-500" strokeWidth={2} />
+              Butuh bantuan?
+            </p>
             <p>
               Hubungi Tim Human Capital apabila menemui kendala atau
               membutuhkan informasi lebih lanjut terkait proses ini. Materi

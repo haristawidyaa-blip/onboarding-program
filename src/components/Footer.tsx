@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Mail, MapPin } from "lucide-react";
 import { programDays } from "@/lib/data";
+import { withBasePath } from "@/lib/basePath";
+import { InstagramIcon, TwitterIcon, FacebookIcon, LinkedinIcon } from "./SocialIcons";
 
 const socials = [
-  { label: "Instagram", href: "https://instagram.com/cisdi_id" },
-  { label: "Twitter", href: "https://twitter.com/CISDI_ID" },
-  { label: "Facebook", href: "https://facebook.com/cisdi.id" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/cisdi" },
+  { label: "Instagram", href: "https://instagram.com/cisdi_id", Icon: InstagramIcon },
+  { label: "Twitter", href: "https://twitter.com/CISDI_ID", Icon: TwitterIcon },
+  { label: "Facebook", href: "https://facebook.com/cisdi.id", Icon: FacebookIcon },
+  { label: "LinkedIn", href: "https://linkedin.com/company/cisdi", Icon: LinkedinIcon },
 ];
 
 export function Footer() {
@@ -15,11 +18,12 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="lg:col-span-1">
           <Image
-            src="/cisdi-logo.png"
+            src={withBasePath("/cisdi-logo.png")}
             alt="CISDI"
             width={92}
             height={45}
             className="h-8 w-auto"
+            unoptimized
           />
           <p className="mt-4 text-sm leading-relaxed text-white/50">
             Center for Indonesia&apos;s Strategic Development Initiatives.
@@ -27,16 +31,16 @@ export function Footer() {
             Capital &amp; Learning Development.
           </p>
           <div className="mt-5 flex items-center gap-3">
-            {socials.map((s) => (
+            {socials.map(({ label, href, Icon }) => (
               <a
-                key={s.label}
-                href={s.href}
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={s.label}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-xs hover:border-red-500 hover:text-red-500 transition-colors"
+                aria-label={label}
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-red-500 hover:text-red-500 transition-colors"
               >
-                {s.label[0]}
+                <Icon className="h-3.5 w-3.5" />
               </a>
             ))}
           </div>
@@ -59,7 +63,11 @@ export function Footer() {
           <p className="text-sm font-semibold text-white mb-3">Bantuan</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="mailto:humancapital@cisdi.org" className="hover:text-white transition-colors">
+              <a
+                href="mailto:humancapital@cisdi.org"
+                className="flex items-center gap-1.5 hover:text-white transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5" strokeWidth={2} />
                 Hubungi Tim Human Capital
               </a>
             </li>
@@ -74,9 +82,16 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold text-white mb-3">Info Kontak</p>
           <ul className="space-y-2 text-sm text-white/50">
-            <li>Jl. Tebet Barat Dalam VIII No.12, Jakarta Selatan</li>
+            <li className="flex items-start gap-1.5">
+              <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" strokeWidth={2} />
+              Jl. Tebet Barat Dalam VIII No.12, Jakarta Selatan
+            </li>
             <li>
-              <a href="mailto:info@cisdi.org" className="hover:text-white transition-colors">
+              <a
+                href="mailto:info@cisdi.org"
+                className="flex items-center gap-1.5 hover:text-white transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5" strokeWidth={2} />
                 info@cisdi.org
               </a>
             </li>

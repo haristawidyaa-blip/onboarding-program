@@ -5,7 +5,7 @@ export const programDays: ProgramDay[] = [
     slug: "hari-1",
     dayNumber: 1,
     title: "Mengenal CISDI yang Sehat, Adil, Setara",
-    emoji: "🎡",
+    icon: "kickoff",
     intro:
       "Halo! Selamat datang di hari pertama kamu bekerja di CISDI. Mari mulai dengan mengeksplorasi sejarah, visi, misi, dan nilai-nilai CISDI — yang menjadi kompas dalam setiap langkah kita.",
     sections: [
@@ -197,7 +197,7 @@ export const programDays: ProgramDay[] = [
     slug: "hari-2",
     dayNumber: 2,
     title: "Ekosistem Kerja, Kebijakan & Pedoman CISDI",
-    emoji: "🎡",
+    icon: "kickoff",
     intro:
       "Mari berkenalan lebih jauh dengan ekosistem kerja CISDI. Hari ini kita mengupas bagaimana prinsip Sehat, Adil, Setara diimplementasikan dalam kebijakan dan pedoman internal CISDI.",
     sections: [
@@ -338,7 +338,7 @@ export const programDays: ProgramDay[] = [
     slug: "hari-3",
     dayNumber: 3,
     title: "Life at CISDI",
-    emoji: "🌿",
+    icon: "growth",
     intro:
       "Hari ini kamu akan mengenal lebih dekat kehidupan di CISDI — bukan hanya sebagai tempat bekerja, tetapi sebagai organisasi yang digerakkan oleh tujuan, kolaborasi, dan semangat belajar yang berkelanjutan.",
     sections: [
@@ -459,7 +459,7 @@ export const programDays: ProgramDay[] = [
     slug: "hari-4",
     dayNumber: 4,
     title: "Misi Mengenal Kantor & Rekan Kerja",
-    emoji: "🌿",
+    icon: "growth",
     intro:
       "Hai! Selamat datang di hari keempat. Hari ini, saatnya kamu mengeksplorasi kantor kita secara luring dan mengenal lebih dekat orang-orang yang akan bekerja bersamamu. Sambil berjalan-jalan, selesaikan misi kecil ini — seru, ringan, tapi penuh makna!",
     closingQuote:
@@ -513,7 +513,7 @@ export const programDays: ProgramDay[] = [
     slug: "hari-5",
     dayNumber: 5,
     title: "Refleksi Akhir & Sesi Penyelarasan Penutup",
-    emoji: "🎡",
+    icon: "kickoff",
     intro:
       "Hari terakhir program orientasi! Saatnya merangkum perjalanan belajarmu selama satu pekan, menuntaskan misi hari keempat, dan menyiapkan langkah-langkah awal kontribusimu di CISDI.",
     note:

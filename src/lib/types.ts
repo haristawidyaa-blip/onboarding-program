@@ -23,11 +23,13 @@ export interface ProgramSection {
   tasks: ProgramTask[];
 }
 
+export type DayIcon = "kickoff" | "growth";
+
 export interface ProgramDay {
   slug: string;
   dayNumber: number;
   title: string;
-  emoji: string;
+  icon: DayIcon;
   intro: string;
   closingQuote?: string;
   sections: ProgramSection[];
