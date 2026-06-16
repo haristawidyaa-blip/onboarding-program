@@ -21,6 +21,7 @@ import {
 import { LearningMaterial } from "@/lib/types";
 import { SopItem } from "@/lib/sopData";
 import { getToken, setToken as storeToken, clearToken } from "@/lib/cmsToken";
+import { getCmsAuthed, clearCmsAuthed } from "@/lib/cmsAuth";
 import {
   fetchLearningMaterials,
   saveLearningMaterials,
@@ -406,13 +407,13 @@ export function AdminClient() {
   const [activeTab, setActiveTab] = useState<Tab>("learning");
 
   useEffect(() => {
-    const ok = !!getToken();
-    if (!ok) router.replace("/admin/login");
-    else setHasToken(true);
+    if (!getCmsAuthed()) router.replace("/admin/login");
+    else setHasToken(!!getToken());
   }, [router]);
 
   function handleDisconnect() {
     clearToken();
+    clearCmsAuthed();
     router.replace("/admin/login");
   }
 
