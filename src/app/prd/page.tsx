@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { prdSections } from "@/lib/prdContent";
+
+export const metadata: Metadata = { title: "PRD" };
 
 export default function PrdPage() {
   return (

@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { AdminClient } from "./AdminClient";
+
+export const metadata: Metadata = { title: "Kelola Materi" };
 
 export default function AdminPage() {
   return (

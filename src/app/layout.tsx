@@ -11,8 +11,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "LMS CISDI | Program Orientasi Karyawan Baru",
-  description: "LMS Program Orientasi Karyawan Baru CISDI",
+  title: {
+    template: "%s | LMS CISDI",
+    default: "LMS CISDI",
+  },
+  description: "Platform pembelajaran digital CISDI — onboarding dan materi pengembangan SDM.",
 };
 
 export default function RootLayout({

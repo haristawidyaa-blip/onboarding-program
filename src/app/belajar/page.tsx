@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { LearningSpaceClient } from "./LearningSpaceClient";
+
+export const metadata: Metadata = { title: "Learning Space" };
 
 export default function BelajarPage() {
   return (
