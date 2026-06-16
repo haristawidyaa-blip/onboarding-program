@@ -2,7 +2,6 @@
 
 import { Header } from "@/components/Header";
 import { DayCard } from "@/components/DayCard";
-import { ProgressBar } from "@/components/ProgressBar";
 import { programDays, totalTaskCount } from "@/lib/data";
 import { useProgress } from "@/lib/useProgress";
 
@@ -28,50 +27,76 @@ export default function Home() {
     programDays.find((d) => countDayDone(d, completed) < countDayTasks(d)) ??
     programDays[programDays.length - 1];
 
+  const pct = totalTaskCount === 0 ? 0 : Math.round((totalDone / totalTaskCount) * 100);
+
   return (
     <>
       <Header />
       <main className="flex-1">
-        <section className="mx-auto max-w-5xl px-4 sm:px-6 py-10">
-          <div className="rounded-3xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400 p-8 sm:p-10 text-white shadow-lg">
-            <p className="text-emerald-50/90 text-sm font-medium">
-              🎪 Program Orientasi Karyawan Baru
-            </p>
-            <h1 className="mt-2 text-2xl sm:text-3xl font-bold">
-              Selamat bergabung di CISDI! 👋🏼
+        <section
+          className="relative bg-[#161616] bg-cover bg-center"
+          style={{ backgroundImage: "url(/hero-bergabung.png)" }}
+        >
+          <div className="absolute inset-0 bg-[#0f0f0f]/80" aria-hidden />
+          <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-14">
+            <div className="flex items-center gap-2 text-sm text-white/60">
+              <span aria-hidden>🏠</span>
+              <span aria-hidden>›</span>
+              <span className="font-semibold text-white">Program Orientasi Karyawan Baru</span>
+            </div>
+
+            <h1 className="mt-6 max-w-3xl text-3xl sm:text-5xl font-bold text-white leading-tight">
+              Selamat bergabung di CISDI, mari mulai hari pertamamu!
             </h1>
-            <p className="mt-3 max-w-2xl text-emerald-50/95 text-sm sm:text-base">
+            <p className="mt-5 max-w-2xl text-white/70 text-sm sm:text-base leading-relaxed">
               Ikuti perjalanan belajar selama 5 hari untuk mengenal visi, misi,
               nilai-nilai, ekosistem kerja, dan rekan-rekan kerjamu di CISDI.
               Selesaikan task harian, tandai progress kamu, dan jangan lupa
               hadir di setiap sesi penyelarasan.
             </p>
 
-            <div className="mt-6 max-w-md">
-              <div className="flex items-center justify-between text-sm mb-1.5">
-                <span className="font-medium">Progress keseluruhan</span>
-                <span className="font-semibold">
-                  {totalDone}/{totalTaskCount} task
-                </span>
-              </div>
-              <ProgressBar value={totalDone} total={totalTaskCount} />
-            </div>
-
             <a
               href={`/hari/${nextDay.slug}`}
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-emerald-700 hover:bg-emerald-50"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
             >
               Lanjutkan ke {nextDay.title}
               <span aria-hidden>→</span>
             </a>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-bold text-red-600 dark:text-red-500">{programDays.length} Hari</p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+                  Durasi program orientasi karyawan baru CISDI.
+                </p>
+              </div>
+              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-bold text-red-600 dark:text-red-500">
+                  {totalDone}/{totalTaskCount}
+                </p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+                  Task yang sudah kamu selesaikan sejauh ini.
+                </p>
+              </div>
+              <div className="rounded-xl bg-zinc-100 dark:bg-white/10 p-5">
+                <p className="text-2xl font-bold text-red-600 dark:text-red-500">{pct}%</p>
+                <p className="mt-1 text-sm text-zinc-700 dark:text-white/70">
+                  Progress keseluruhan program onboardingmu.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-4 sm:px-6 pb-16">
-          <h2 className="text-lg font-semibold text-zinc-900 mb-4">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+          <p className="text-red-600 dark:text-red-500 text-sm font-semibold uppercase tracking-wide">
             Jadwal Harian
+          </p>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#161616] dark:text-white max-w-2xl">
+            Kesempatan belajar dan menjadi bagian dari CISDI, satu hari pada satu waktu
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {programDays.map((day) => (
               <DayCard
                 key={day.slug}
@@ -82,8 +107,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-zinc-200 bg-white p-5 text-sm text-zinc-600">
-            <p className="font-medium text-zinc-800 mb-1">Butuh bantuan?</p>
+          <div className="mt-10 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 text-sm text-zinc-600 dark:text-white/60">
+            <p className="font-semibold text-zinc-900 dark:text-white mb-1.5">Butuh bantuan?</p>
             <p>
               Hubungi Tim Human Capital apabila menemui kendala atau
               membutuhkan informasi lebih lanjut terkait proses ini. Materi
